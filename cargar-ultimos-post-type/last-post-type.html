@@ -1,0 +1,58 @@
+<?php
+								$queryObject = new WP_Query( 'post_type=noticias&posts_per_page=3' );
+								// Loop
+								if ($queryObject->have_posts()) {
+								    ?>
+
+									    <div class="row">
+									    <?php
+									    $i=1;
+									    while ($queryObject->have_posts()) {
+									        $queryObject->the_post();
+									        if ($i==1){ ?>
+
+									        <!-- Noticia 1 -->
+
+										  		<div class="col-md-4">
+
+										  			<div class="fondo-blanco">
+
+										  				
+
+										  			</div>
+
+										  		</div>
+				       
+									       <?php }else if($i==2){?>
+
+									       	<!-- Noticia 2 -->
+									        
+									        	<div class="col-md-4">
+
+										  			<div class="fondo-blanco">
+
+										  			</div>
+
+										  		</div>
+
+									        <?php }else if($i==3){?>
+
+									        <!-- Noticia 2 -->
+									        
+									        <div class="col-md-4">
+
+										  			<div class="fondo-blanco">
+
+										  			</div>
+
+										  		</div>
+
+									        <?php } $i++; ?>
+									    <?php
+									    }
+									    ?>
+									    </div>
+								    
+								    <?php
+								}
+								?>

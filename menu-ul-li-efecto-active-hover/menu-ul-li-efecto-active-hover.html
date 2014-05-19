@@ -1,0 +1,75 @@
+<nav class="menu-catalogo"> 
+    <ul class="categorias">
+    <li class="filter seleccion-filtro" data-filter="*"><a>Todas las Categorias</a></li>
+    <li class="filter" data-filter=".arte-popular"><a>Arte Popular</a></li>
+    <li class="filter" data-filter=".arte-recreacion"><a>Arte y Recreación</a></li>
+    <li class="filter" data-filter=".ciencias-sociales"><a>Ciencias Sociales</a></li>
+    <li class="filter" data-filter=".historia-geografia-ciencias-auxiliares"><a>Historia Geografía y Ciencias Sociales</a></li>
+    </ul>			                            
+</nav>
+
+
+<!-- Dropdown Responsivo -->
+
+<div class="dropdown filtro">
+<button class="btn dropdown-toggle sr-only" type="button"
+id="dropdownMenu1" data-toggle="dropdown">
+Filtrar Por:
+<span class="caret"></span>
+</button>
+
+<ul class="categorias dropdown-menu dos" role="menu" aria-labelledby="dropdownMenu1">
+<li class="filter" data-filter="*">
+<a>Todas las Categorías</a>	
+</li>
+<li class="filter" data-filter=".arte-popular">
+<a>Arte Popular</a>
+</li>
+<li class="filter" data-filter=".arte-recreacion">
+<a>Arte y Recreación</a>
+</li>
+<li class="filter" data-filter=".ciencias-sociales">
+<a>Ciencias Sociales</a>
+</li>
+<li class="filter" data-filter=".historia-geografía-ciencias-auxiliares">
+<a>Historia Geografia y Ciencias Sociales</a>
+</li>
+</ul>
+</div>
+
+
+<script>
+    jQuery("nav.menu-catalogo ul.categorias li a").click(function()
+    {
+    jQuery("nav.menu-catalogo ul.categorias li a").parent().removeClass("seleccion-filtro");
+
+    jQuery(this).parent().addClass("seleccion-filtro");
+    });
+</script>
+
+<!-- Selector en modo responsivo -->
+
+<script>
+
+ jQuery(".dropdown-menu li a").click(function(){
+    
+    jQuery("#dropdownMenu1:first-child").text($(this).text());
+     jQuery("#dropdownMenu1:first-child").val($(this).text());
+  });
+
+</script>
+
+
+
+<style>
+    nav.menu-catalogo ul.categorias li a:hover{
+    border-bottom: solid 2px #C3A463;
+    padding-bottom: 13px;  
+    }
+
+    nav.menu-catalogo ul.categorias li.seleccion-filtro a{
+    color:@dorado;
+    border-bottom: solid 2px #C3A463;
+    padding-bottom: 13px;
+    }
+</style>
